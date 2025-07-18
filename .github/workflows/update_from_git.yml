@@ -1,0 +1,73 @@
+name: Update from git
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    branches: [main]
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - main
+          - dev
+
+jobs:
+  deploy:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/dev') ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
+
+      - name: Display deployment info
+        run: |
+          BRANCH=$([[ "${{ github.event_name }}" == "workflow_dispatch" ]]             && echo "${{ github.event.inputs.branch }}"             || echo "${{ github.ref_name }}")
+          echo "Deploying branch: $BRANCH"
+          echo "Triggered by: ${{ github.event_name }}"
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.10'
+
+      - name: Install dependencies
+        run: |
+          pip install pyfabricops python-dotenv
+          pip list
+
+      - name: Run update from git
+        env:
+          FAB_CLIENT_ID:        ${{ secrets.FAB_CLIENT_ID }}
+          FAB_CLIENT_SECRET:    ${{ secrets.FAB_CLIENT_SECRET }}
+          FAB_TENANT_ID:        ${{ secrets.FAB_TENANT_ID }}
+          FAB_USERNAME:         ${{ secrets.FAB_USERNAME }}
+          FAB_PASSWORD:         ${{ secrets.FAB_PASSWORD }}
+          AZURE_CLIENT_ID:      ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET:  ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_TENANT_ID:      ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_KEY_VAULT_NAME: ${{ secrets.AZURE_KEY_VAULT_NAME }}
+          DATABASE_USERNAME:    ${{ secrets.DATABASE_USERNAME }}
+          DATABASE_PASSWORD:    ${{ secrets.DATABASE_PASSWORD }}
+          GH_TOKEN:             ${{ secrets.GH_TOKEN }}
+        run: python scripts/update_from_git.py
+
+      
+      - name: Commit changes
+        run: |
+          git config --local user.name  "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add .
+          git commit -m "chore: update from git with GitHub Actions" || echo "No changes to commit"
+      
+      - name: Push changes
+        run: |
+          git push origin HEAD:${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref_name }}
