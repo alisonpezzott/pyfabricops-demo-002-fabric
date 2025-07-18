@@ -1,0 +1,68 @@
+{
+    "dev": {
+        "PF_002_Fabric": {
+            "workspace_config": {
+                "workspace_id": "0ae3ae7c-e2a9-407d-a92b-0bdc8799b9a8",
+                "workspace_name": "PF_002_Fabric-DEV",
+                "workspace_description": "CI/CD with Microsoft Fabric and PyFabricOps",
+                "capacity_id": "7732a1eb-3893-4642-a85c-93fc3f35d076",
+                "capacity_region": "East US",
+                "workspace_roles": [
+                    {
+                        "user_uuid": "cbe83b10-3b7c-4479-8168-e5281fabf7ea",
+                        "user_type": "Group",
+                        "role": "Admin",
+                        "display_name": "AppFabricUsers",
+                        "group_type": "SecurityGroup",
+                        "email": null
+                    },
+                    {
+                        "user_uuid": "9322eb4a-4132-4bd1-8df1-5cd3d1d2400b",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Alison Pezzott",
+                        "user_principal_name": "alison.pezzott@overdax.com"
+                    },
+                    {
+                        "user_uuid": "b025341a-965a-4c35-b12e-2af63e5eb58f",
+                        "user_type": "User",
+                        "role": "Contributor",
+                        "display_name": "Dev",
+                        "user_principal_name": "dev@overdax.com"
+                    },
+                    {
+                        "user_uuid": "bde43861-55e1-4144-b572-be115312967f",
+                        "user_type": "ServicePrincipal",
+                        "role": "Admin",
+                        "display_name": "AppFabric",
+                        "app_id": "7f3c52e1-46fa-4d5d-880b-c1e721a1f729"
+                    }
+                ]
+            },
+            "folders": {
+                "Orchestration": "1813457d-633a-46bc-bd65-7afb6a563195",
+                "PowerBI": "704abe3c-4c90-4a82-b5e9-55b8d046a452",
+                "Storage": "4617f283-43b9-498a-96bc-3078391adcfb",
+                "PowerBI/DirectLake": "e38f6560-e5e8-4884-b227-c3e185d5249b",
+                "PowerBI/Import": "337bb477-27a9-4871-974f-65d2d116ee88"
+            },
+            "lakehouses": {
+                "MainStorage": {
+                    "id": "78c4f663-1bda-4d19-9827-1e16eea65b6c",
+                    "description": "The main storage of the lakehouse",
+                    "folder_id": "4617f283-43b9-498a-96bc-3078391adcfb",
+                    "sql_endpoint_id": "772dfa1d-0bc6-42b4-9852-87ad6ac5df3b",
+                    "sql_endpoint_connection_string": "gvkmt76pz4cuhm2fs63qgxl5cy-psxogcvj4j6ubkjlbpoipgnzva.datawarehouse.fabric.microsoft.com"
+                }
+            },
+            "warehouses": {
+                "MainWarehouse": {
+                    "id": "b3ae8fcb-a9fe-4ef0-8bc4-13aeeb9435fe",
+                    "description": "The SQL instance for the project",
+                    "folder_id": "4617f283-43b9-498a-96bc-3078391adcfb",
+                    "sql_endpoint_connection_string": "gvkmt76pz4cuhm2fs63qgxl5cy-psxogcvj4j6ubkjlbpoipgnzva.datawarehouse.fabric.microsoft.com"
+                }
+            }
+        }
+    }
+}

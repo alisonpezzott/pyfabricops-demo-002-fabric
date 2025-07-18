@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "MainStorage",
+    "description": "The main storage of the lakehouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "771221c5-4c7e-4e65-b8ad-282b1e93815a"
+  }
+}
