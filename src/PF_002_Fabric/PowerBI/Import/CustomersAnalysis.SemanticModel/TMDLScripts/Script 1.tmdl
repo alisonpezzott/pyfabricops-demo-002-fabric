@@ -1,0 +1,589 @@
+createOrReplace
+
+	model Model
+		culture: en-US
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: pt-BR
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table DimCustomer
+			lineageTag: a85f23ae-2afc-42c3-a288-72fa5ceaca1a
+
+			column CustomerKey
+				dataType: int64
+				formatString: 0
+				lineageTag: 2b9df1ab-d060-4221-9162-0a43bba8d989
+				summarizeBy: none
+				sourceColumn: CustomerKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column CustomerAlternateKey
+				dataType: string
+				lineageTag: c0928d3b-0503-4b50-b785-7f60e2bab309
+				summarizeBy: none
+				sourceColumn: CustomerAlternateKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column BirthDate
+				dataType: dateTime
+				formatString: Long Date
+				lineageTag: 2a04fbd1-7b3d-4752-b1ae-4048bbb8c429
+				summarizeBy: none
+				sourceColumn: BirthDate
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column Gender
+				dataType: string
+				lineageTag: 69f9c38d-6f01-4676-a6f7-990be6c10c84
+				summarizeBy: none
+				sourceColumn: Gender
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column MaritalStatus
+				dataType: string
+				lineageTag: ae970a84-6632-4f18-a1da-f540f10d72d3
+				summarizeBy: none
+				sourceColumn: MaritalStatus
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column TotalChildren
+				dataType: int64
+				formatString: 0
+				lineageTag: b999e0bd-723f-48e3-9231-9e6c91a91747
+				summarizeBy: none
+				sourceColumn: TotalChildren
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column Education
+				dataType: string
+				lineageTag: f1b313fb-9357-4ff8-be70-2840e3015f55
+				summarizeBy: none
+				sourceColumn: Education
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column Occupation
+				dataType: string
+				lineageTag: 8a89c67a-5366-4cc6-94bf-9ea5aa2e4cd8
+				summarizeBy: none
+				sourceColumn: Occupation
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column HouseOwnerFlag
+				dataType: string
+				lineageTag: d75be626-e504-443f-80a5-2b63661299ea
+				summarizeBy: none
+				sourceColumn: HouseOwnerFlag
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column NumberCarsOwned
+				dataType: int64
+				formatString: 0
+				lineageTag: 5a6e7bad-c988-4ab8-bc94-b5f9e5e78a34
+				summarizeBy: none
+				sourceColumn: NumberCarsOwned
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column FullName
+				dataType: string
+				lineageTag: ee9d0ee4-06d7-4a91-bdf4-122d474f075e
+				summarizeBy: none
+				sourceColumn: FullName
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column City
+				dataType: string
+				lineageTag: 419bc647-07ce-4302-a927-859b5a4123df
+				summarizeBy: none
+				sourceColumn: City
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column CountryRegion
+				dataType: string
+				lineageTag: 23eed142-fe26-4f55-8979-40482c5c03bf
+				summarizeBy: none
+				sourceColumn: CountryRegion
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			partition DimCustomer = m
+				mode: import
+				source =
+						let
+						    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+						    dbo_DimCustomer = Source{[Schema="dbo",Item="DimCustomer"]}[Data]
+						in
+						    dbo_DimCustomer
+
+		table DimDate
+			lineageTag: 2e7da454-912e-4179-bb68-184618fb77f7
+			dataCategory: Time
+
+			column DateKey
+				dataType: int64
+				formatString: 0
+				lineageTag: f04f5d1f-882f-4707-8d78-74afe6f48f9a
+				summarizeBy: none
+				sourceColumn: DateKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column FullDateAlternateKey
+				dataType: dateTime
+				isKey
+				formatString: Long Date
+				lineageTag: 2da409b7-8327-4aba-8f4f-1a0856de1202
+				summarizeBy: none
+				sourceColumn: FullDateAlternateKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column DayNumberOfWeek
+				dataType: int64
+				formatString: 0
+				lineageTag: 6b7d7cf6-e2e9-498d-8fc2-4af7d87d363b
+				summarizeBy: none
+				sourceColumn: DayNumberOfWeek
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column DayNameOfWeek
+				dataType: string
+				lineageTag: 02da415c-1fba-46d0-b2bf-971bb0c67b7e
+				summarizeBy: none
+				sourceColumn: DayNameOfWeek
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column DayNumberOfMonth
+				dataType: int64
+				formatString: 0
+				lineageTag: 3c83fb98-0bf0-4bf6-824a-a05687496021
+				summarizeBy: none
+				sourceColumn: DayNumberOfMonth
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column DayNumberOfYear
+				dataType: int64
+				formatString: 0
+				lineageTag: e2876a43-bb22-4459-ab1b-58d28d002c4e
+				summarizeBy: none
+				sourceColumn: DayNumberOfYear
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column WeekNumberOfYear
+				dataType: int64
+				formatString: 0
+				lineageTag: b8efb81c-d368-4852-9cf9-61e69ed33901
+				summarizeBy: none
+				sourceColumn: WeekNumberOfYear
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column MonthName
+				dataType: string
+				lineageTag: 63011c88-ebf9-433c-921c-8bf8cb6e5ce4
+				summarizeBy: none
+				sourceColumn: MonthName
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column MonthNumberOfYear
+				dataType: int64
+				formatString: 0
+				lineageTag: cf8c777c-b685-4755-949b-11f91e5a7952
+				summarizeBy: none
+				sourceColumn: MonthNumberOfYear
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column CalendarQuarter
+				dataType: int64
+				formatString: 0
+				lineageTag: 1ed55f6a-68cb-401a-bd63-3cd26e34a5f4
+				summarizeBy: none
+				sourceColumn: CalendarQuarter
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column CalendarYear
+				dataType: int64
+				formatString: 0
+				lineageTag: 5fec7f0b-45c6-4343-a634-2d97ec6882fa
+				summarizeBy: none
+				sourceColumn: CalendarYear
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column CalendarSemester
+				dataType: int64
+				formatString: 0
+				lineageTag: d77cadee-4da0-476c-9b97-9de823774f50
+				summarizeBy: none
+				sourceColumn: CalendarSemester
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column FiscalQuarter
+				dataType: int64
+				formatString: 0
+				lineageTag: b02238a4-b8ed-478e-9d7e-76de963562ae
+				summarizeBy: none
+				sourceColumn: FiscalQuarter
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column FiscalYear
+				dataType: int64
+				formatString: 0
+				lineageTag: 49c817ac-822d-4b2c-907a-3638ff215f71
+				summarizeBy: none
+				sourceColumn: FiscalYear
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column FiscalSemester
+				dataType: int64
+				formatString: 0
+				lineageTag: fe34ce95-293b-4111-8821-0c88b891d831
+				summarizeBy: none
+				sourceColumn: FiscalSemester
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			partition DimDate = m
+				mode: import
+				source =
+						let
+						    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+						    dbo_DimDate = Source{[Schema="dbo",Item="DimDate"]}[Data]
+						in
+						    dbo_DimDate
+
+		table DimProduct
+			lineageTag: c83852da-f224-4602-87b6-9968efd564a2
+
+			column ProductKey
+				dataType: int64
+				formatString: 0
+				lineageTag: 6d6f7eb9-13b7-4284-965f-e5eaf0950407
+				summarizeBy: none
+				sourceColumn: ProductKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column ProductName
+				dataType: string
+				lineageTag: f7d4f365-8176-4168-af14-63743385c161
+				summarizeBy: none
+				sourceColumn: ProductName
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column Color
+				dataType: string
+				lineageTag: 2f80248e-5578-458a-877e-49b2007079bd
+				summarizeBy: none
+				sourceColumn: Color
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column Size
+				dataType: string
+				lineageTag: 21d9c728-c2a5-406c-92ad-5533cacf21c4
+				summarizeBy: none
+				sourceColumn: Size
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column ModelName
+				dataType: string
+				lineageTag: 60fb231f-dc4d-44e6-92a6-df93e2a49b3a
+				summarizeBy: none
+				sourceColumn: ModelName
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column Description
+				dataType: string
+				lineageTag: b56ec74a-3729-476c-9620-2d94a20047cc
+				summarizeBy: none
+				sourceColumn: Description
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column ProductSubcategoyName
+				dataType: string
+				lineageTag: c55c5fa5-5b2f-4e9b-9012-a7cdcab0816e
+				summarizeBy: none
+				sourceColumn: ProductSubcategoyName
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column ProductCategoryName
+				dataType: string
+				lineageTag: f6957b6c-c4c3-44bf-ad15-50d032e4588f
+				summarizeBy: none
+				sourceColumn: ProductCategoryName
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			partition DimProduct = m
+				mode: import
+				source =
+						let
+						    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+						    dbo_DimProduct = Source{[Schema="dbo",Item="DimProduct"]}[Data]
+						in
+						    dbo_DimProduct
+
+		table FactInternetSales
+			lineageTag: 2eb5caff-5861-4d8d-8ce2-81dfc613341f
+
+			column ProductKey
+				dataType: int64
+				formatString: 0
+				lineageTag: 06fb568a-c4b7-44ac-a4f4-0cc2c1d65c6e
+				summarizeBy: none
+				sourceColumn: ProductKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column OrderDateKey
+				dataType: int64
+				formatString: 0
+				lineageTag: 090edca9-ace5-42bc-95d7-9e413f5fa6d4
+				summarizeBy: none
+				sourceColumn: OrderDateKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column DueDateKey
+				dataType: int64
+				formatString: 0
+				lineageTag: 3e81d3a9-3410-434c-8236-e610c2b280f3
+				summarizeBy: none
+				sourceColumn: DueDateKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column ShipDateKey
+				dataType: int64
+				formatString: 0
+				lineageTag: b13b7845-3af4-4c93-9c33-ebe4d7cf0373
+				summarizeBy: none
+				sourceColumn: ShipDateKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column CustomerKey
+				dataType: int64
+				formatString: 0
+				lineageTag: 0448a698-47d2-404d-b559-2fa0307a65b8
+				summarizeBy: none
+				sourceColumn: CustomerKey
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column SalesOrderNumber
+				dataType: string
+				lineageTag: 8a47cfdc-9a88-4f8a-af2c-04298096def8
+				summarizeBy: none
+				sourceColumn: SalesOrderNumber
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column OrderQuantity
+				dataType: int64
+				formatString: 0
+				lineageTag: 717698e4-0c9b-4518-b3d0-12e19b96c146
+				summarizeBy: none
+				sourceColumn: OrderQuantity
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+			column UnitPrice
+				dataType: double
+				lineageTag: 75d5347a-6923-49e3-a901-719c718640e2
+				summarizeBy: none
+				sourceColumn: UnitPrice
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column UnitPriceDiscountPct
+				dataType: double
+				lineageTag: 5462f4f9-c992-48f9-85ea-95f3abc86d0f
+				summarizeBy: none
+				sourceColumn: UnitPriceDiscountPct
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			column ProductStandardCost
+				dataType: double
+				lineageTag: 0dab4d83-1c7c-4958-af0a-b985690dd3f2
+				summarizeBy: none
+				sourceColumn: ProductStandardCost
+
+				changedProperty = SummarizeBy
+
+                annotation SummarizationSetBy = User
+
+				annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+			partition FactInternetSales = m
+				mode: import
+				source =
+						let
+						    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+						    dbo_FactInternetSales = Source{[Schema="dbo",Item="FactInternetSales"]}[Data]
+						in
+						    dbo_FactInternetSales
+
+		relationship AutoDetected_76e753d5-5911-495f-8366-8820d29b700a
+			fromColumn: FactInternetSales.CustomerKey
+			toColumn: DimCustomer.CustomerKey
+
+		relationship AutoDetected_b104e446-3c20-4617-bbfc-3cd66308cbbf
+			fromColumn: FactInternetSales.ProductKey
+			toColumn: DimProduct.ProductKey
+
+		relationship 5add793b-50e5-1170-b7a9-e05677a73db7
+			fromColumn: FactInternetSales.OrderDateKey
+			toColumn: DimDate.DateKey
+
+		relationship 40326420-98a6-908e-ef38-0c5a17121964
+			isActive: false
+			fromColumn: FactInternetSales.DueDateKey
+			toColumn: DimDate.DateKey
+
+		relationship bb5b00a2-69cf-a9f5-fd53-363acee71d17
+			isActive: false
+			fromColumn: FactInternetSales.ShipDateKey
+			toColumn: DimDate.DateKey
+
+		cultureInfo en-US
+
+			linguisticMetadata = {"Version":"1.0.0","Language":"en-US"}
+				contentType: json
+
+		annotation __PBI_TimeIntelligenceEnabled = 0
+
+		annotation PBIDesktopVersion = 2.145.1105.0 (25.07)+decbc46fce458c5b8d5109d6f32a743f2ac949c8
+
+		annotation PBI_QueryOrder = ["DimCustomer","DimDate","DimProduct","FactInternetSales"]
+
+		annotation PBI_ProTooling = ["TMDLView_Desktop"]
+

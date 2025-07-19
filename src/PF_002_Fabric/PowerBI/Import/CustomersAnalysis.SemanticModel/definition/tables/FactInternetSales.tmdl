@@ -1,0 +1,135 @@
+table FactInternetSales
+	lineageTag: 2eb5caff-5861-4d8d-8ce2-81dfc613341f
+
+	measure 'Sales Amount' = ```
+			
+			SUMX(
+			    'FactInternetSales',
+			    'FactInternetSales'[OrderQuantity] * FactInternetSales[UnitPrice]
+			)
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: d6c18946-143b-4b3e-9897-143fea2879b3
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 06fb568a-c4b7-44ac-a4f4-0cc2c1d65c6e
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column OrderDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 090edca9-ace5-42bc-95d7-9e413f5fa6d4
+		summarizeBy: none
+		sourceColumn: OrderDateKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column DueDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e81d3a9-3410-434c-8236-e610c2b280f3
+		summarizeBy: none
+		sourceColumn: DueDateKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column ShipDateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b13b7845-3af4-4c93-9c33-ebe4d7cf0373
+		summarizeBy: none
+		sourceColumn: ShipDateKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 0448a698-47d2-404d-b559-2fa0307a65b8
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column SalesOrderNumber
+		dataType: string
+		lineageTag: 8a47cfdc-9a88-4f8a-af2c-04298096def8
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column OrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 717698e4-0c9b-4518-b3d0-12e19b96c146
+		summarizeBy: none
+		sourceColumn: OrderQuantity
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 75d5347a-6923-49e3-a901-719c718640e2
+		summarizeBy: none
+		sourceColumn: UnitPrice
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPriceDiscountPct
+		dataType: double
+		lineageTag: 5462f4f9-c992-48f9-85ea-95f3abc86d0f
+		summarizeBy: none
+		sourceColumn: UnitPriceDiscountPct
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ProductStandardCost
+		dataType: double
+		lineageTag: 0dab4d83-1c7c-4958-af0a-b985690dd3f2
+		summarizeBy: none
+		sourceColumn: ProductStandardCost
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition FactInternetSales = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+				    dbo_FactInternetSales = Source{[Schema="dbo",Item="FactInternetSales"]}[Data]
+				in
+				    dbo_FactInternetSales
+

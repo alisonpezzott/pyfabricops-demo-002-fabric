@@ -1,0 +1,148 @@
+table DimCustomer
+	lineageTag: a85f23ae-2afc-42c3-a288-72fa5ceaca1a
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b9df1ab-d060-4221-9162-0a43bba8d989
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column CustomerAlternateKey
+		dataType: string
+		lineageTag: c0928d3b-0503-4b50-b785-7f60e2bab309
+		summarizeBy: none
+		sourceColumn: CustomerAlternateKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column BirthDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2a04fbd1-7b3d-4752-b1ae-4048bbb8c429
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Gender
+		dataType: string
+		lineageTag: 69f9c38d-6f01-4676-a6f7-990be6c10c84
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column MaritalStatus
+		dataType: string
+		lineageTag: ae970a84-6632-4f18-a1da-f540f10d72d3
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column TotalChildren
+		dataType: int64
+		formatString: 0
+		lineageTag: b999e0bd-723f-48e3-9231-9e6c91a91747
+		summarizeBy: none
+		sourceColumn: TotalChildren
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Education
+		dataType: string
+		lineageTag: f1b313fb-9357-4ff8-be70-2840e3015f55
+		summarizeBy: none
+		sourceColumn: Education
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Occupation
+		dataType: string
+		lineageTag: 8a89c67a-5366-4cc6-94bf-9ea5aa2e4cd8
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column HouseOwnerFlag
+		dataType: string
+		lineageTag: d75be626-e504-443f-80a5-2b63661299ea
+		summarizeBy: none
+		sourceColumn: HouseOwnerFlag
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column NumberCarsOwned
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a6e7bad-c988-4ab8-bc94-b5f9e5e78a34
+		summarizeBy: none
+		sourceColumn: NumberCarsOwned
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column FullName
+		dataType: string
+		lineageTag: ee9d0ee4-06d7-4a91-bdf4-122d474f075e
+		summarizeBy: none
+		sourceColumn: FullName
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column City
+		dataType: string
+		lineageTag: 419bc647-07ce-4302-a927-859b5a4123df
+		summarizeBy: none
+		sourceColumn: City
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column CountryRegion
+		dataType: string
+		lineageTag: 23eed142-fe26-4f55-8979-40482c5c03bf
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition DimCustomer = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+				    dbo_DimCustomer = Source{[Schema="dbo",Item="DimCustomer"]}[Data]
+				in
+				    dbo_DimCustomer
+
