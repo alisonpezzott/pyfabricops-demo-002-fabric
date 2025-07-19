@@ -1,0 +1,52 @@
+{
+    "dev": {
+        "PF_002_Fabric": {
+            "workspace_config": {
+                "workspace_id": "8db97391-07e4-439b-9ab7-35d58bc354ad",
+                "workspace_name": "PF_002_Fabric-DEV",
+                "workspace_description": "CI/CD with Microsoft Fabric and PyFabricOps",
+                "capacity_id": "7732a1eb-3893-4642-a85c-93fc3f35d076",
+                "capacity_region": "East US",
+                "workspace_roles": [
+                    {
+                        "user_uuid": "9322eb4a-4132-4bd1-8df1-5cd3d1d2400b",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Alison Pezzott",
+                        "user_principal_name": "alison.pezzott@overdax.com"
+                    },
+                    {
+                        "user_uuid": "b025341a-965a-4c35-b12e-2af63e5eb58f",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Dev",
+                        "user_principal_name": "dev@overdax.com"
+                    },
+                    {
+                        "user_uuid": "bde43861-55e1-4144-b572-be115312967f",
+                        "user_type": "ServicePrincipal",
+                        "role": "Admin",
+                        "display_name": "AppFabric",
+                        "app_id": "7f3c52e1-46fa-4d5d-880b-c1e721a1f729"
+                    }
+                ]
+            },
+            "folders": {
+                "Orchestration": "5b41c7a9-8320-4a53-8000-a892fa9caae3",
+                "PowerBI": "cbac119d-d3f5-44a4-b2c5-eaf3bad0ca68",
+                "Storage": "ebb8fb62-680f-40df-aeb4-1267e5b61266",
+                "PowerBI/DirectLake": "8b0d2c69-a076-4e94-a236-3024021a2a57",
+                "PowerBI/Import": "96b764d4-08e7-4c36-8362-2c746faf6add"
+            },
+            "lakehouses": {
+                "MainStorage": {
+                    "id": "d4d2bc40-846e-40d0-bb4d-b79da772df36",
+                    "description": "The main storage of the lakehouse",
+                    "folder_id": "ebb8fb62-680f-40df-aeb4-1267e5b61266",
+                    "sql_endpoint_id": "eff672a6-a7d2-4702-852a-4a6385487fc1",
+                    "sql_endpoint_connection_string": "gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com"
+                }
+            }
+        }
+    }
+}

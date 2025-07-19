@@ -1,0 +1,93 @@
+table DimProduct
+	lineageTag: c83852da-f224-4602-87b6-9968efd564a2
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d6f7eb9-13b7-4284-965f-e5eaf0950407
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column ProductName
+		dataType: string
+		lineageTag: f7d4f365-8176-4168-af14-63743385c161
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Color
+		dataType: string
+		lineageTag: 2f80248e-5578-458a-877e-49b2007079bd
+		summarizeBy: none
+		sourceColumn: Color
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Size
+		dataType: string
+		lineageTag: 21d9c728-c2a5-406c-92ad-5533cacf21c4
+		summarizeBy: none
+		sourceColumn: Size
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column ModelName
+		dataType: string
+		lineageTag: 60fb231f-dc4d-44e6-92a6-df93e2a49b3a
+		summarizeBy: none
+		sourceColumn: ModelName
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Description
+		dataType: string
+		lineageTag: b56ec74a-3729-476c-9620-2d94a20047cc
+		summarizeBy: none
+		sourceColumn: Description
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column ProductSubcategoyName
+		dataType: string
+		lineageTag: c55c5fa5-5b2f-4e9b-9012-a7cdcab0816e
+		summarizeBy: none
+		sourceColumn: ProductSubcategoyName
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column ProductCategoryName
+		dataType: string
+		lineageTag: f6957b6c-c4c3-44bf-ad15-50d032e4588f
+		summarizeBy: none
+		sourceColumn: ProductCategoryName
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("gvkmt76pz4cuhm2fs63qgxl5cy-sfz3tdpea6nuhgvxgxkyxq2uvu.datawarehouse.fabric.microsoft.com", "MainStorage"),
+				    dbo_DimProduct = Source{[Schema="dbo",Item="DimProduct"]}[Data]
+				in
+				    dbo_DimProduct
+
