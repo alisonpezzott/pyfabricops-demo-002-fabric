@@ -1,0 +1,176 @@
+table DimCustomer
+	lineageTag: 8d2e5fac-10d9-4491-8daa-31d8b52fcf41
+	sourceLineageTag: [dbo].[DimCustomer]
+
+	column CustomerKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5e72c476-9fd5-48e6-a3c4-4e08b99c19ff
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		changedProperty = SummarizeBy
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column CustomerAlternateKey
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 03b005db-ea53-4db5-a038-cbeb845de4e6
+		sourceLineageTag: CustomerAlternateKey
+		summarizeBy: none
+		sourceColumn: CustomerAlternateKey
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column BirthDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 0920076d-03ef-4ac3-8cd0-ad4c19e373db
+		sourceLineageTag: BirthDate
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Gender
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 47a2b93e-a539-44b1-9b79-af652eba837f
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column MaritalStatus
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2bc6b758-cdee-4deb-a136-6daa3ef287f0
+		sourceLineageTag: MaritalStatus
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column TotalChildren
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 2aa9064e-4226-4aa1-8a5e-044b8bfacb0a
+		sourceLineageTag: TotalChildren
+		summarizeBy: none
+		sourceColumn: TotalChildren
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Education
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 912f9789-2d2c-4dff-bde8-ac137e2fc15d
+		sourceLineageTag: Education
+		summarizeBy: none
+		sourceColumn: Education
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column Occupation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a3b6a0a8-408b-4af6-9992-87b587df7803
+		sourceLineageTag: Occupation
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column HouseOwnerFlag
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6bd0a110-7ff9-4667-b763-1ae6def78c9c
+		sourceLineageTag: HouseOwnerFlag
+		summarizeBy: none
+		sourceColumn: HouseOwnerFlag
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column NumberCarsOwned
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: d20d5ad5-405e-425d-b9a4-31dd1f9927eb
+		sourceLineageTag: NumberCarsOwned
+		summarizeBy: none
+		sourceColumn: NumberCarsOwned
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column FullName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 25a3d8d9-07f5-455f-b08c-8d87675e2a77
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 31daeea0-769c-4420-a066-a5e23a7f5d09
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	column CountryRegion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0e006f69-f454-4a30-9f2b-3811ab25ce7d
+		sourceLineageTag: CountryRegion
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		changedProperty = SummarizeBy
+
+		annotation SummarizationSetBy = User
+
+	partition DimCustomer = entity
+		mode: directLake
+		source
+			entityName: DimCustomer
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
