@@ -50,7 +50,20 @@
                 "CopyData": {
                     "id": "c6462564-1d7a-4ac6-88a0-ca75994bd6ba",
                     "description": "",
-                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635"
+                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635",
+                    "variables": [
+                        {
+                            "activity_index": 0,
+                            "activity_name": "ForEachCopyData",
+                            "subactivity_index": 0,
+                            "subactivity_name": "CopyData",
+                            "source_database": "AdventureWorksDW2022-DEV",
+                            "source_connection": "2411a00d-8722-46cc-abef-7298906bd27d",
+                            "sink_name": "MainStorageLakehouse",
+                            "sink_workspace_id": "1925dc4a-a6a8-4a1c-b8de-6dd59317509a",
+                            "sink_artifact_id": "00cc985e-0559-487f-bea3-2db78f0905b3"
+                        }
+                    ]
                 }
             },
             "semantic_models": {
@@ -58,7 +71,10 @@
                     "id": "94e5db77-2809-4e57-acb1-a79923e2c509",
                     "description": "",
                     "folder_id": "889fcf99-39db-4a95-9b27-8fca5011677d",
-                    "parameters": {}
+                    "parameters": {
+                        "ServerEndpoint": "GVKMT76PZ4CUHM2FS63QGXL5CY-JLOCKGNIUYOEVOG6NXKZGF2QTI.datawarehouse.fabric.microsoft.com",
+                        "DatabaseId": "e5b95552-3b3b-4fc6-8466-58928b078abd"
+                    }
                 },
                 "CustomersAnalysis": {
                     "id": "70a0f2d3-3d40-4058-a960-cf1e28b0711b",
@@ -74,7 +90,19 @@
                 "TransformAndLoad": {
                     "id": "4fb809c3-d89c-451c-a3fe-b217f956652e",
                     "description": "New notebook",
-                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635"
+                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635",
+                    "variables": [
+                        {
+                            "variable_name": "workspace_name",
+                            "variable_value": "PF_002_Fabric-DEV",
+                            "parameter_type": "string"
+                        },
+                        {
+                            "variable_name": "lakehouse_name",
+                            "variable_value": "MainStorage",
+                            "parameter_type": "string"
+                        }
+                    ]
                 }
             }
         }
