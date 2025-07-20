@@ -38,12 +38,36 @@
                 "PowerBI/Import": "e928a21a-3fd9-40c5-8870-0380f110425c"
             },
             "lakehouses": {
-                "MainStorageLakehouse": {
+                "MainStorage": {
                     "id": "00cc985e-0559-487f-bea3-2db78f0905b3",
                     "description": "A lakehouse for the Microsoft Fabric project with PyFabricOps",
                     "folder_id": "971919aa-cefb-456b-b2d6-406191b89635",
                     "sql_endpoint_id": "e5b95552-3b3b-4fc6-8466-58928b078abd",
                     "sql_endpoint_connection_string": "gvkmt76pz4cuhm2fs63qgxl5cy-jlockgniuyoevog6nxkzgf2qti.datawarehouse.fabric.microsoft.com"
+                }
+            },
+            "data_pipelines": {
+                "CopyData": {
+                    "id": "c6462564-1d7a-4ac6-88a0-ca75994bd6ba",
+                    "description": "",
+                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635"
+                }
+            },
+            "semantic_models": {
+                "SalesPerformance": {
+                    "id": "94e5db77-2809-4e57-acb1-a79923e2c509",
+                    "description": "",
+                    "folder_id": "889fcf99-39db-4a95-9b27-8fca5011677d",
+                    "parameters": {}
+                },
+                "CustomersAnalysis": {
+                    "id": "70a0f2d3-3d40-4058-a960-cf1e28b0711b",
+                    "description": "",
+                    "folder_id": "e928a21a-3fd9-40c5-8870-0380f110425c",
+                    "parameters": {
+                        "Server": "gvkmt76pz4cuhm2fs63qgxl5cy-jlockgniuyoevog6nxkzgf2qti.datawarehouse.fabric.microsoft.com",
+                        "Database": "MainStorage"
+                    }
                 }
             }
         }

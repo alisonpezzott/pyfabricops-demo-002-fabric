@@ -4,8 +4,6 @@ import os
 
 from pathlib import Path
 
-from numpy import disp
-
 # Ensure the parent directory is in the path for module imports
 # sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(".."), "..")))
 
