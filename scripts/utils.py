@@ -681,7 +681,7 @@ def replace_notebook_variables_with_placeholders(
     config_path: str, 
     branch: str,
 ):
-    notebook_path = f'{project_path}/{workspace_path}/Orchestration/{notebook_name}.Notebook/notebook-content.py'
+    notebook_path = f'{project_path}/{workspace_path}/{notebook_name}.Notebook/notebook-content.py'
 
     # Retrieve variables from config
     with open(config_path, 'r') as file:
