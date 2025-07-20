@@ -51,9 +51,8 @@ jobs:
           FAB_TENANT_ID:        ${{ secrets.FAB_TENANT_ID }}
           FAB_USERNAME:         ${{ secrets.FAB_USERNAME }}
           FAB_PASSWORD:         ${{ secrets.FAB_PASSWORD }}
-        run: |
-          export PYTHONPATH="${{ github.workspace }}"  
-          python scripts/placeholder_to_parameters.py
+          PYTHONPATH:           ${{ github.workspace }}
+        run: python -m scripts.placeholder_to_parameters
 
       - name: Run deploy_project.py
         env:
@@ -62,9 +61,8 @@ jobs:
           FAB_TENANT_ID:        ${{ secrets.FAB_TENANT_ID }}
           FAB_USERNAME:         ${{ secrets.FAB_USERNAME }}
           FAB_PASSWORD:         ${{ secrets.FAB_PASSWORD }}
-        run: |
-          export PYTHONPATH="${{ github.workspace }}"  
-          python scripts/deploy_project.py
+          PYTHONPATH:           ${{ github.workspace }}
+        run: python -m scripts.deploy_project
 
       - name: Run extract_parameters.py
         env:
@@ -73,9 +71,8 @@ jobs:
           FAB_TENANT_ID:        ${{ secrets.FAB_TENANT_ID }}
           FAB_USERNAME:         ${{ secrets.FAB_USERNAME }}
           FAB_PASSWORD:         ${{ secrets.FAB_PASSWORD }}
-        run: |
-          export PYTHONPATH="${{ github.workspace }}"  
-          python scripts/extract_parameters.py
+          PYTHONPATH:           ${{ github.workspace }}
+        run: python -m scripts.extract_parameters
 
       - name: Run parameters_to_placeholders.py
         env:
@@ -84,9 +81,8 @@ jobs:
           FAB_TENANT_ID:        ${{ secrets.FAB_TENANT_ID }}
           FAB_USERNAME:         ${{ secrets.FAB_USERNAME }}
           FAB_PASSWORD:         ${{ secrets.FAB_PASSWORD }}
-        run: |
-          export PYTHONPATH="${{ github.workspace }}"  
-          python scripts/parameters_to_placeholders.py
+          PYTHONPATH:           ${{ github.workspace }}
+        run: python -m scripts.parameters_to_placeholders
 
       - name: Commit changes
         run: |
