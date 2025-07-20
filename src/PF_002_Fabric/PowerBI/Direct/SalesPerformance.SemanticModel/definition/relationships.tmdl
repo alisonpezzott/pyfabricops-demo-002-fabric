@@ -1,0 +1,22 @@
+relationship 3f3e20e1-1d93-6aaa-22ba-70827ef5bff3
+	fromColumn: FactInternetSales.OrderDateKey
+	toColumn: DimDate.DateKey
+
+relationship 0c1b2fec-2672-7867-8a3a-d1bcf4c1a9fb
+	fromColumn: FactInternetSales.ProductKey
+	toColumn: DimProduct.ProductKey
+
+relationship f97f1e2f-d228-6b6f-f984-4a30e2aa531d
+	fromColumn: FactInternetSales.CustomerKey
+	toColumn: DimCustomer.CustomerKey
+
+relationship fe5e5eef-a6a2-b7f6-f367-6d567fb22860
+	isActive: false
+	fromColumn: FactInternetSales.ShipDateKey
+	toColumn: DimDate.DateKey
+
+relationship fa6fb4de-cc64-6472-98fb-a1706190da2a
+	isActive: false
+	fromColumn: FactInternetSales.DueDateKey
+	toColumn: DimDate.DateKey
+

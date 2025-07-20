@@ -1,0 +1,9 @@
+expression DatabaseQuery =
+		let
+		    database = Sql.Database("#{ServerEndpoint}#", "#{DatabaseId}#")
+		in
+		    database
+	lineageTag: 1b39e6e3-b92a-4068-a699-c76ce1b20cc1
+
+	annotation PBI_IncludeFutureArtifacts = False
+

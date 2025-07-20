@@ -12,13 +12,13 @@ pf.setup_logging(level='info', format_style='minimal')
 
 # project specific settings
 root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-project_path   = 'src'
-workspace_path = 'PF_002_Fabric'
-branch         = pf.get_current_branch()
-workspace_alias = "PF_002_Fabric"
-workspace_suffix = pf.get_workspace_suffix(
+project_path               = 'src'
+workspace_path             = 'PF_002_Fabric'
+branch                     = pf.get_current_branch()
+workspace_alias            = "PF_002_Fabric"
+workspace_suffix           = pf.get_workspace_suffix(
     branch=branch,
     path=os.path.join(root_path, 'branches.json')
 )
-workspace_name = f'{workspace_alias}{workspace_suffix}'
-config_path    = os.path.join(project_path, 'config.json')
+workspace_name             = f'{workspace_alias}{workspace_suffix}'
+config_path                = os.path.join(project_path, 'config.json')

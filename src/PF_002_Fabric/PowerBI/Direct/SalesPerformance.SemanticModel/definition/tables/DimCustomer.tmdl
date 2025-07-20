@@ -1,0 +1,147 @@
+table DimCustomer
+	lineageTag: e5f65953-111c-44b8-a4d1-17168a1c4418
+	sourceLineageTag: [dbo].[DimCustomer]
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c41c3748-e802-41ad-8347-42079f3aaee7
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerAlternateKey
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1ac0033c-429e-418b-aa79-03ecbf59c029
+		sourceLineageTag: CustomerAlternateKey
+		summarizeBy: none
+		sourceColumn: CustomerAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column BirthDate
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 19ccb4cb-d521-49f7-bb9d-0e6a50bdaf85
+		sourceLineageTag: BirthDate
+		summarizeBy: none
+		sourceColumn: BirthDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d0bcdb65-0d0b-4f2a-ab49-c1428afbf6e6
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaritalStatus
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f53ad412-3950-4f82-adb4-080a1bfd7777
+		sourceLineageTag: MaritalStatus
+		summarizeBy: none
+		sourceColumn: MaritalStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column TotalChildren
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 89434128-2994-4232-8fc5-913608d4cd10
+		sourceLineageTag: TotalChildren
+		summarizeBy: none
+		sourceColumn: TotalChildren
+
+		annotation SummarizationSetBy = Automatic
+
+	column Education
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ff28f62d-755e-41dc-b1f3-a23c91361a16
+		sourceLineageTag: Education
+		summarizeBy: none
+		sourceColumn: Education
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5c847e23-3480-4d4f-94cb-65e70e88ba52
+		sourceLineageTag: Occupation
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column HouseOwnerFlag
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f80caa45-f059-4477-bbe8-d00700140830
+		sourceLineageTag: HouseOwnerFlag
+		summarizeBy: none
+		sourceColumn: HouseOwnerFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumberCarsOwned
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 3674246b-5078-4a10-be2c-fd62ff994e29
+		sourceLineageTag: NumberCarsOwned
+		summarizeBy: none
+		sourceColumn: NumberCarsOwned
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fc1e619d-8da9-4e8e-8e06-a2fe51625bdc
+		sourceLineageTag: FullName
+		summarizeBy: none
+		sourceColumn: FullName
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 855f9934-79be-4528-af06-5eb497b735b4
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegion
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e7ed0703-4fee-4333-80eb-1d6a220885b0
+		sourceLineageTag: CountryRegion
+		summarizeBy: none
+		sourceColumn: CountryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCustomer = entity
+		mode: directLake
+		source
+			entityName: DimCustomer
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

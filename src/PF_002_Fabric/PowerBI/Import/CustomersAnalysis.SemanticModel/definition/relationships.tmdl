@@ -1,0 +1,22 @@
+relationship AutoDetected_2c965a0c-895b-4b00-a36a-4777c528c5ae
+	fromColumn: FactInternetSales.CustomerKey
+	toColumn: DimCustomer.CustomerKey
+
+relationship AutoDetected_698cd71e-be0f-4239-9030-961baa859082
+	fromColumn: FactInternetSales.ProductKey
+	toColumn: DimProduct.ProductKey
+
+relationship e6942e59-4fd6-6962-1177-091218ba5d04
+	fromColumn: FactInternetSales.OrderDateKey
+	toColumn: DimDate.DateKey
+
+relationship 88719b68-d9af-91ef-af65-4c0d3fc0706e
+	isActive: false
+	fromColumn: FactInternetSales.ShipDateKey
+	toColumn: DimDate.DateKey
+
+relationship c4b05061-b2c8-987e-02e6-f5b3f42deda7
+	isActive: false
+	fromColumn: FactInternetSales.DueDateKey
+	toColumn: DimDate.DateKey
+

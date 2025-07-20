@@ -1,0 +1,182 @@
+table DimDate
+	lineageTag: 4460eed8-d7d4-4ed1-bbfa-256460f1efce
+	sourceLineageTag: [dbo].[DimDate]
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 041175e9-f7d1-4664-bdfd-6a65fa088c61
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column FullDateAlternateKey
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: a28cad1c-c186-4192-a5a0-f7621e904f85
+		sourceLineageTag: FullDateAlternateKey
+		summarizeBy: none
+		sourceColumn: FullDateAlternateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumberOfWeek
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: c481d8a7-d20a-4601-9080-7225f08f5bec
+		sourceLineageTag: DayNumberOfWeek
+		summarizeBy: none
+		sourceColumn: DayNumberOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNameOfWeek
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4e1feb0d-439a-4395-a23d-fddaef57e3f2
+		sourceLineageTag: DayNameOfWeek
+		summarizeBy: none
+		sourceColumn: DayNameOfWeek
+		sortByColumn: DayNumberOfWeek
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumberOfMonth
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 0e2218d1-23fe-416f-b68e-4a28ee18fe26
+		sourceLineageTag: DayNumberOfMonth
+		summarizeBy: none
+		sourceColumn: DayNumberOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayNumberOfYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: fe3aee7b-1cc7-40b4-a056-d097fcdbdafc
+		sourceLineageTag: DayNumberOfYear
+		summarizeBy: none
+		sourceColumn: DayNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNumberOfYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 83b82420-1fdd-4918-b900-b319ac54bf6f
+		sourceLineageTag: WeekNumberOfYear
+		summarizeBy: none
+		sourceColumn: WeekNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0d293ab2-0003-4c64-8cb8-57185b2143c7
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: MonthNumberOfYear
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumberOfYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 08707704-27f6-4075-abac-d2a03882ecb5
+		sourceLineageTag: MonthNumberOfYear
+		summarizeBy: none
+		sourceColumn: MonthNumberOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 750b7653-356e-4e20-87c2-3c947571b9f2
+		sourceLineageTag: CalendarQuarter
+		summarizeBy: none
+		sourceColumn: CalendarQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: e3e770ad-3857-4904-9d19-459a2714ea26
+		sourceLineageTag: CalendarYear
+		summarizeBy: none
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarSemester
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 2a298028-aeee-4294-b0ff-8007f39ee4b6
+		sourceLineageTag: CalendarSemester
+		summarizeBy: none
+		sourceColumn: CalendarSemester
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 5074ded4-25b3-4395-8008-b60c5ec1bd7f
+		sourceLineageTag: FiscalQuarter
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: 6e3f9ab9-dd8b-43ee-b926-b6e693e1f62c
+		sourceLineageTag: FiscalYear
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalSemester
+		dataType: int64
+		formatString: 0
+		sourceProviderType: smallint
+		lineageTag: dd8bfc96-b07d-4761-8613-6ce8b0370707
+		sourceLineageTag: FiscalSemester
+		summarizeBy: none
+		sourceColumn: FiscalSemester
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimDate = entity
+		mode: directLake
+		source
+			entityName: DimDate
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+
