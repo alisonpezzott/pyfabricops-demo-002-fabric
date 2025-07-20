@@ -40,3 +40,12 @@ pf.export_all_semantic_models(
     workspace_suffix=workspace_suffix,
     excluded_starts=('Main',)
 )
+
+pf.export_all_notebooks(
+    workspace_name,
+    project_path=project_path,
+    workspace_path=workspace_path,
+    config_path=config_path,
+    branch=branch,
+    workspace_suffix=workspace_suffix,
+)

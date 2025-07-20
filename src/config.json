@@ -69,6 +69,13 @@
                         "Database": "MainStorage"
                     }
                 }
+            },
+            "notebooks": {
+                "TransformAndLoad": {
+                    "id": "4fb809c3-d89c-451c-a3fe-b217f956652e",
+                    "description": "New notebook",
+                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635"
+                }
             }
         }
     }
