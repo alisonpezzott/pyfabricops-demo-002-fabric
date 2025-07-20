@@ -44,7 +44,7 @@ jobs:
           pip install pyfabricops python-dotenv
           pip list
 
-      - name: Run placeholder_to_parameters.py
+      - name: Run placeholders_to_parameters.py
         env:
           FAB_CLIENT_ID:        ${{ secrets.FAB_CLIENT_ID }}
           FAB_CLIENT_SECRET:    ${{ secrets.FAB_CLIENT_SECRET }}
@@ -52,7 +52,7 @@ jobs:
           FAB_USERNAME:         ${{ secrets.FAB_USERNAME }}
           FAB_PASSWORD:         ${{ secrets.FAB_PASSWORD }}
           PYTHONPATH:           ${{ github.workspace }}
-        run: python -m scripts.placeholder_to_parameters
+        run: python -m scripts.placeholders_to_parameters
 
       - name: Run deploy_project.py
         env:
