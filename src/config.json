@@ -176,13 +176,19 @@
                     "parameters": {
                         "ServerEndpoint": "GVKMT76PZ4CUHM2FS63QGXL5CY-5GIMAOW6NVWU3NMEYZM5BBBQEQ.datawarehouse.fabric.microsoft.com",
                         "DatabaseId": "7a35c4b8-ce2b-4c83-b654-e8d4f8753695"
-                    }
+                    },
+                    "id": "4b063b8b-76db-47ad-8da4-6fbf1b3a9240",
+                    "description": "",
+                    "folder_id": "3b135e10-6c6d-45db-8450-7573b4060efd"
                 },
                 "CustomersAnalysis": {
                     "parameters": {
                         "Server": "gvkmt76pz4cuhm2fs63qgxl5cy-5gimaow6nvwu3nmeyzm5bbbqeq.datawarehouse.fabric.microsoft.com",
                         "Database": "MainStorage"
-                    }
+                    },
+                    "id": "116494e1-aa3b-4b1a-ba33-08f705ea2578",
+                    "description": "",
+                    "folder_id": "17a2fc19-522a-4291-8d0e-3d399e245c26"
                 }
             },
             "notebooks": {
@@ -190,7 +196,7 @@
                     "variables": [
                         {
                             "variable_name": "workspace_name",
-                            "variable_value": "PF_002_Fabric-PROD",
+                            "variable_value": "PF_002_Fabric-PRD",
                             "parameter_type": "string"
                         },
                         {
@@ -198,7 +204,10 @@
                             "variable_value": "MainStorage",
                             "parameter_type": "string"
                         }
-                    ]
+                    ],
+                    "id": "025ff209-5fe1-4303-ac04-eb7e880a89b7",
+                    "description": "New notebook",
+                    "folder_id": "082a8a6b-e060-4bb4-888c-06521a791715"
                 }
             }
         }
