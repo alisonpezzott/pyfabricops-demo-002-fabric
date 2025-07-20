@@ -1,8 +1,8 @@
 name: Update from git
 
 on:
-  push:
-    branches: [dev]
+  schedule:
+    - cron: '0 6 * * *'  # Executa às 3h da manhã (UTC) todos os dias
   pull_request:
     branches: [main]
     types: [closed]
@@ -21,7 +21,7 @@ jobs:
   deploy:
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'push' && github.ref == 'refs/heads/dev') ||
+      github.event_name == 'schedule' ||
       (github.event_name == 'pull_request' && github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main')
     runs-on: ubuntu-latest
     permissions:
@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || (github.event_name == 'pull_request' && github.event.pull_request.base.ref) || 'dev' }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Display deployment info
