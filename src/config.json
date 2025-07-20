@@ -1,0 +1,51 @@
+{
+    "dev": {
+        "PF_002_Fabric": {
+            "workspace_config": {
+                "workspace_id": "1925dc4a-a6a8-4a1c-b8de-6dd59317509a",
+                "workspace_name": "PF_002_Fabric-DEV",
+                "workspace_description": "A Microsoft Fabric project with PyFabricOps",
+                "capacity_id": "7732a1eb-3893-4642-a85c-93fc3f35d076",
+                "capacity_region": "East US",
+                "workspace_roles": [
+                    {
+                        "user_uuid": "9322eb4a-4132-4bd1-8df1-5cd3d1d2400b",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Alison Pezzott",
+                        "user_principal_name": "alison.pezzott@overdax.com"
+                    },
+                    {
+                        "user_uuid": "b025341a-965a-4c35-b12e-2af63e5eb58f",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Dev",
+                        "user_principal_name": "dev@overdax.com"
+                    },
+                    {
+                        "user_uuid": "bde43861-55e1-4144-b572-be115312967f",
+                        "user_type": "ServicePrincipal",
+                        "role": "Admin",
+                        "display_name": "AppFabric",
+                        "app_id": "7f3c52e1-46fa-4d5d-880b-c1e721a1f729"
+                    }
+                ]
+            },
+            "folders": {
+                "Engineering": "971919aa-cefb-456b-b2d6-406191b89635",
+                "PowerBI": "6cd6917f-8ac0-467a-a6e9-9057e059eef3",
+                "PowerBI/Direct": "889fcf99-39db-4a95-9b27-8fca5011677d",
+                "PowerBI/Import": "e928a21a-3fd9-40c5-8870-0380f110425c"
+            },
+            "lakehouses": {
+                "MainStorageLakehouse": {
+                    "id": "00cc985e-0559-487f-bea3-2db78f0905b3",
+                    "description": "A lakehouse for the Microsoft Fabric project with PyFabricOps",
+                    "folder_id": "971919aa-cefb-456b-b2d6-406191b89635",
+                    "sql_endpoint_id": "e5b95552-3b3b-4fc6-8466-58928b078abd",
+                    "sql_endpoint_connection_string": "gvkmt76pz4cuhm2fs63qgxl5cy-jlockgniuyoevog6nxkzgf2qti.datawarehouse.fabric.microsoft.com"
+                }
+            }
+        }
+    }
+}
