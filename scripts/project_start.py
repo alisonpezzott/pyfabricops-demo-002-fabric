@@ -81,7 +81,7 @@ pf.export_folders(
 # Create the lakehouse
 lakehouse = pf.create_lakehouse(
     workspace_id,
-    display_name='MainStorageLakehouse',
+    display_name='MainStorage',
     description='A lakehouse for the Microsoft Fabric project with PyFabricOps',
     folder='Engineering',
 )

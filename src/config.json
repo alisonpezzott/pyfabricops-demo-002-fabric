@@ -106,5 +106,101 @@
                 }
             }
         }
+    },
+    "main": {
+        "PF_002_Fabric": {
+            "workspace_config": {
+                "workspace_id": "3ac090e9-6dde-4d6d-b584-c659d0843024",
+                "workspace_name": "PF_002_Fabric-PRD",
+                "workspace_description": "A Microsoft Fabric project with PyFabricOps",
+                "capacity_id": "7732a1eb-3893-4642-a85c-93fc3f35d076",
+                "capacity_region": "East US",
+                "workspace_roles": [
+                    {
+                        "user_uuid": "9322eb4a-4132-4bd1-8df1-5cd3d1d2400b",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Alison Pezzott",
+                        "user_principal_name": "alison.pezzott@overdax.com"
+                    },
+                    {
+                        "user_uuid": "b025341a-965a-4c35-b12e-2af63e5eb58f",
+                        "user_type": "User",
+                        "role": "Admin",
+                        "display_name": "Dev",
+                        "user_principal_name": "dev@overdax.com"
+                    },
+                    {
+                        "user_uuid": "bde43861-55e1-4144-b572-be115312967f",
+                        "user_type": "ServicePrincipal",
+                        "role": "Admin",
+                        "display_name": "AppFabric",
+                        "app_id": "7f3c52e1-46fa-4d5d-880b-c1e721a1f729"
+                    }
+                ]
+            },
+            "folders": {
+                "Engineering": "082a8a6b-e060-4bb4-888c-06521a791715",
+                "PowerBI": "79d96bd0-39f7-4673-a0c7-c46476e4597a",
+                "PowerBI/Direct": "3b135e10-6c6d-45db-8450-7573b4060efd",
+                "PowerBI/Import": "17a2fc19-522a-4291-8d0e-3d399e245c26"
+            },
+            "lakehouses": {
+                "MainStorageLakehouse": {
+                    "id": "eb935f37-5835-4763-a00d-a98bd847292b",
+                    "description": "A lakehouse for the Microsoft Fabric project with PyFabricOps",
+                    "folder_id": "082a8a6b-e060-4bb4-888c-06521a791715",
+                    "sql_endpoint_id": "7a35c4b8-ce2b-4c83-b654-e8d4f8753695",
+                    "sql_endpoint_connection_string": "gvkmt76pz4cuhm2fs63qgxl5cy-5gimaow6nvwu3nmeyzm5bbbqeq.datawarehouse.fabric.microsoft.com"
+                }
+            },
+            "data_pipelines": {
+                "CopyData": {
+                    "variables": [
+                        {
+                            "activity_index": 0,
+                            "activity_name": "ForEachCopyData",
+                            "subactivity_index": 0,
+                            "subactivity_name": "CopyData",
+                            "source_database": "AdventureWorksDW2022-PRD",
+                            "source_connection": "25c39679-c050-4b46-a7e3-6d2915a9542a",
+                            "sink_name": "MainStorageLakehouse",
+                            "sink_workspace_id": "3ac090e9-6dde-4d6d-b584-c659d0843024",
+                            "sink_artifact_id": "eb935f37-5835-4763-a00d-a98bd847292b"
+                        }
+                    ]
+                }
+            },
+            "semantic_models": {
+                "SalesPerformance": {
+                    "parameters": {
+                        "ServerEndpoint": "GVKMT76PZ4CUHM2FS63QGXL5CY-5GIMAOW6NVWU3NMEYZM5BBBQEQ.datawarehouse.fabric.microsoft.com",
+                        "DatabaseId": "7a35c4b8-ce2b-4c83-b654-e8d4f8753695"
+                    }
+                },
+                "CustomersAnalysis": {
+                    "parameters": {
+                        "Server": "gvkmt76pz4cuhm2fs63qgxl5cy-5gimaow6nvwu3nmeyzm5bbbqeq.datawarehouse.fabric.microsoft.com",
+                        "Database": "MainStorage"
+                    }
+                }
+            },
+            "notebooks": {
+                "TransformAndLoad": {
+                    "variables": [
+                        {
+                            "variable_name": "workspace_name",
+                            "variable_value": "PF_002_Fabric-PROD",
+                            "parameter_type": "string"
+                        },
+                        {
+                            "variable_name": "lakehouse_name",
+                            "variable_value": "MainStorage",
+                            "parameter_type": "string"
+                        }
+                    ]
+                }
+            }
+        }
     }
 }
