@@ -1,8 +1,8 @@
 # scripts/project_start.py
 from scripts.bootstrap import (
     pf,
-    project_path, workspace_alias, config_path, branch, workspace_path
+    project_path, workspace_alias, config_path, branch, workspace_path, workspace_name
 )
 
-workspaces = pf.list_workspaces(df=True) 
-print(workspaces) 
+
+print(workspace_name)
