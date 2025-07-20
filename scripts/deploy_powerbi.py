@@ -11,15 +11,6 @@ from scripts.bootstrap import (
     workspace_suffix,
 )
 
-pf.deploy_all_semantic_models(
-    workspace_name,
-    project_path=project_path,
-    workspace_path=workspace_path,
-    config_path=config_path,
-    branch=branch,
-    workspace_suffix=workspace_suffix,
-) 
-
 pf.export_all_semantic_models(
     workspace_name,
     project_path=project_path,
